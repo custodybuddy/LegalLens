@@ -1,0 +1,5 @@
+{
+  "name": "CustodyBuddy MVP",
+  "description": "Privacy-first SaaS for analyzing Ontario family law documents, extracting support calculations, and flagging compliance issues using AI.",
+  "requestFramePermissions": []
+}

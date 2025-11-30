@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CustodyBuddy - LegalLens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Mapping old names to new palette for compatibility
+              'cb-primary': '#FACC15', // Yellow-400
+              'cb-primary-soft': '#FEF08A', // Yellow-200
+              'cb-navy': '#0F172A', // Slate-900
+              'cb-darkBlue': '#020617', // Slate-950
+              'cb-section': '#0F172A',
+              'cb-card': '#1E293B', // Slate-800
+              'cb-text': '#E2E8F0', // Slate-200
+              'cb-muted': '#94A3B8', // Slate-400
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'], // Switched to sans as per new design
+            },
+            animation: {
+              'in': 'in 0.2s ease-out',
+              'slide-in-from-top-2': 'slideInFromTop 0.2s ease-out',
+              'slide-in-from-bottom-2': 'slideInFromBottom 0.5s ease-out',
+              'fade-in': 'fadeIn 0.5s ease-out',
+            },
+            keyframes: {
+              in: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              slideInFromTop: {
+                '0%': { transform: 'translateY(-0.5rem)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
+              slideInFromBottom: {
+                '0%': { transform: 'translateY(1rem)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              },
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #E2E8F0; /* Slate 200 */
+        }
+        /* Custom Scrollbar Hiding */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(250, 204, 21, 0.3);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(250, 204, 21, 0.5);
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
