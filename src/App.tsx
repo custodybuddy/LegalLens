@@ -68,9 +68,9 @@ function App() {
           date: "Oct 12, 2024"
         },
         custody: [
-          { id: 1, label: "Regular Schedule", value: "2-2-5-5 Rotation", detail: "Mother: Mon/Tue, Father: Wed/Thu, Alternate Weekends." },
-          { id: 2, label: "Summer Break", value: "Week On / Week Off", detail: "Exchanges occur Fridays at 6:00 PM." },
-          { id: 3, label: "Thanksgiving", value: "Alternating Years", detail: "Father in even years, Mother in odd years." }
+          { id: 1, label: "Regular Schedule", value: "2-2-5-5 Rotation", detail: "Mother: Mon/Tue, Father: Wed/Thu, Alternate Weekends.", responsibility: "Shared" },
+          { id: 2, label: "Summer Break", value: "Week On / Week Off", detail: "Exchanges occur Fridays at 6:00 PM.", responsibility: "Alternating" },
+          { id: 3, label: "Thanksgiving", value: "Alternating Years", detail: "Father in even years, Mother in odd years.", responsibility: "Alternating" }
         ],
         financials: [
           { id: 1, type: "support", title: "Child Support", amount: "$1,250/mo", due: "1st of month" },

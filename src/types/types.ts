@@ -21,6 +21,7 @@ export interface CustodySchedule {
   label: string;
   value: string;
   detail: string;
+  responsibility: string; // Added field
 }
 
 export interface FinancialItem {

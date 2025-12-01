@@ -60,8 +60,8 @@ export const ProfileView: React.FC = () => {
     <div className="max-w-[1120px] mx-auto space-y-6 md:space-y-8 animate-[fade-in_0.5s_ease-out] pb-10">
       <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 md:mb-10">
         <div>
-          <h1 className="text-2xl md:text-3xl font-prata heading-gold mb-2">My Profile</h1>
-          <p className="text-sm text-cb-muted font-raleway">Manage your personal information and legal jurisdiction settings.</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-cb-primary mb-2">My Profile</h1>
+          <p className="text-sm text-cb-muted">Manage your personal information and legal jurisdiction settings.</p>
         </div>
         <Button 
           onClick={handleSave} 
@@ -94,8 +94,8 @@ export const ProfileView: React.FC = () => {
                   <User className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl">Personal Information</CardTitle>
-                  <CardDescription>Basic details for your account</CardDescription>
+                  <CardTitle className="text-xl text-cb-primary">Personal Information</CardTitle>
+                  <CardDescription className="text-cb-muted">Basic details for your account</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -140,12 +140,12 @@ export const ProfileView: React.FC = () => {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
+                <div className="p-2 bg-cb-primary/10 rounded-lg text-cb-primary">
                   <Globe className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl">Jurisdiction Settings</CardTitle>
-                  <CardDescription>Set the default context for legal analysis</CardDescription>
+                  <CardTitle className="text-xl text-cb-primary">Jurisdiction Settings</CardTitle>
+                  <CardDescription className="text-cb-muted">Set the default context for legal analysis</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -172,7 +172,7 @@ export const ProfileView: React.FC = () => {
                 {/* Dynamic Notes Display */}
                 <div 
                   id="jurisdiction-notes" 
-                  className="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-gray-400 font-raleway leading-relaxed"
+                  className="mt-4 p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-cb-muted leading-relaxed"
                   role="status"
                   aria-live="polite"
                 >
@@ -190,19 +190,19 @@ export const ProfileView: React.FC = () => {
         <section className="space-y-6" aria-label="App Preferences">
           <Card className="h-full">
             <CardHeader>
-              <CardTitle className="text-xl">Preferences</CardTitle>
-              <CardDescription>Customize your experience</CardDescription>
+              <CardTitle className="text-xl text-cb-primary">Preferences</CardTitle>
+              <CardDescription className="text-cb-muted">Customize your experience</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               
               {/* Notification Preference */}
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <div className="flex items-center gap-2 text-white font-medium text-sm">
+                  <div className="flex items-center gap-2 text-cb-text font-medium text-sm">
                     <Bell className="w-4 h-4 text-cb-primary" aria-hidden="true" />
                     <Label htmlFor="pref-notifications" className="cursor-pointer">Notifications</Label>
                   </div>
-                  <p id="desc-notifications" className="text-xs text-gray-500">Receive analysis alerts</p>
+                  <p id="desc-notifications" className="text-xs text-cb-muted">Receive analysis alerts</p>
                 </div>
                 <input 
                   id="pref-notifications"
@@ -218,11 +218,11 @@ export const ProfileView: React.FC = () => {
               {/* High Contrast Preference */}
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <div className="flex items-center gap-2 text-white font-medium text-sm">
+                  <div className="flex items-center gap-2 text-cb-text font-medium text-sm">
                     <Eye className="w-4 h-4 text-cb-primary" aria-hidden="true" />
                     <Label htmlFor="pref-contrast" className="cursor-pointer">High Contrast</Label>
                   </div>
-                  <p id="desc-contrast" className="text-xs text-gray-500">Increase UI visibility</p>
+                  <p id="desc-contrast" className="text-xs text-cb-muted">Increase UI visibility</p>
                 </div>
                 <input 
                   id="pref-contrast"
@@ -238,11 +238,11 @@ export const ProfileView: React.FC = () => {
               {/* Auto-Redaction Preference */}
               <div className="flex items-center justify-between">
                  <div className="space-y-0.5">
-                  <div className="flex items-center gap-2 text-white font-medium text-sm">
+                  <div className="flex items-center gap-2 text-cb-text font-medium text-sm">
                     <Shield className="w-4 h-4 text-cb-primary" aria-hidden="true" />
                     <Label htmlFor="pref-redaction" className="cursor-pointer">Auto-Redaction</Label>
                   </div>
-                  <p id="desc-redaction" className="text-xs text-gray-500">Mask PII by default</p>
+                  <p id="desc-redaction" className="text-xs text-cb-muted">Mask PII by default</p>
                 </div>
                 <input 
                   id="pref-redaction"

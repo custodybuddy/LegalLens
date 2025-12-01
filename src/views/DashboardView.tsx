@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useCallback } from 'react';
 import { AnalysisResult, DocumentFile } from '../types/types';
-import { Download, X, FileText, CheckCircle, Search, ChevronRight, Calendar, DollarSign, AlertTriangle, Upload } from 'lucide-react';
+import { Download, X, FileText, CheckCircle, Search, ChevronRight, Calendar, DollarSign, AlertTriangle, Upload, User } from 'lucide-react';
 
 interface DashboardViewProps {
   result: AnalysisResult | null;
@@ -69,9 +69,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ result, onReset, o
       date: "Oct 12, 2024"
     },
     custody: [
-      { id: 1, label: "Regular Schedule", value: "2-2-5-5 Rotation", detail: "Mother: Mon/Tue, Father: Wed/Thu, Alternate Weekends." },
-      { id: 2, label: "Summer Break", value: "Week On / Week Off", detail: "Exchanges occur Fridays at 6:00 PM." },
-      { id: 3, label: "Thanksgiving", value: "Alternating Years", detail: "Father in even years, Mother in odd years." }
+      { id: 1, label: "Regular Schedule", value: "2-2-5-5 Rotation", detail: "Mother: Mon/Tue, Father: Wed/Thu, Alternate Weekends.", responsibility: "Shared" },
+      { id: 2, label: "Summer Break", value: "Week On / Week Off", detail: "Exchanges occur Fridays at 6:00 PM.", responsibility: "Alternating" },
+      { id: 3, label: "Thanksgiving", value: "Alternating Years", detail: "Father in even years, Mother in odd years.", responsibility: "Alternating" }
     ],
     financials: [
       { id: 1, type: "support", title: "Child Support", amount: "$1,250/mo", due: "1st of month" },
@@ -233,7 +233,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ result, onReset, o
                   </div>
                   <span className={`bg-yellow-900/30 ${ACCENT_COLOR_CLASS} border border-yellow-600/30 text-xs px-2 py-1 rounded-md font-medium`}>{item.value}</span>
                 </div>
-                <p className={`text-sm ${LIGHT_TEXT_CLASS} ml-6`}>{item.detail}</p>
+                
+                {item.responsibility && (
+                  <div className="flex items-center gap-2 text-xs mt-1 ml-6">
+                    <User className="w-3 h-3 text-slate-400" />
+                    <span className="text-slate-400 uppercase tracking-wide text-[10px] font-semibold">Responsibility:</span>
+                    <span className="text-white font-medium">{item.responsibility}</span>
+                  </div>
+                )}
+                
+                <p className={`text-sm ${LIGHT_TEXT_CLASS} ml-6 mt-1`}>{item.detail}</p>
               </div>
             ))}
             {!(data as any).custody && <p className="text-center text-gray-500">No custody data found.</p>}
